@@ -5,7 +5,7 @@ public class Cube {
     }
     public Cube(int x){
         if(x < 1)
-            System.out.println("A cube's side length cannot be less than 1!");
+            throw new IllegalArgumentException();
         else
             side = x;
     }
@@ -15,6 +15,9 @@ public class Cube {
     }
     public void setSide(int x){
         side = x;
+        if (side<1 ){
+            throw new IllegalArgumentException();
+        }
     }
     public int getSurfaceArea(){
         int sArea = side * side * 6;
